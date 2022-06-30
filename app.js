@@ -1,8 +1,11 @@
 const express = require("express");
+const http = require("http");
 const axios = require("axios");
 const cors = require("cors");
 const Redis = require("redis");
-const client = Redis.createClient();
+// const client = Redis.createClient({url: 'redis://10.18.227.3:6379'});
+const client = Redis.createClient('localhost', '6379');
+// const client = Redis.createClient();
 
 client.on('error', (err) => console.log('Redis Client Error', err));
 
